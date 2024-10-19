@@ -29,6 +29,7 @@ jobs:
           docker build \
             --build-arg COMMIT=${GITHUB_SHA:0:7} \
             --build-arg LASTMOD=$(date -u +%Y-%m-%dT%H:%M:%SZ) \
+            --push \
             --tag ghcr.io/fileformat/node-without-npm:$GITHUB_SHA \
             --tag ghcr.io/fileformat/node-without-npm:latest \
             .
