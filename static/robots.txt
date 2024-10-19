@@ -1,0 +1,8 @@
+#
+# robots.txt for node-without-npm
+#
+# this is just a demonstration: nothing to index here!
+#
+
+User-Agent: *
+Disallow: /

@@ -1,0 +1,13 @@
+*~
+Dockerfile
+.dockerignore
+.DS_Store
+*.env
+.git
+.github
+.gitignore
+*.md
+*.sh
+*.swp
+*.tmp
+tmp
