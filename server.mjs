@@ -31,7 +31,37 @@ function handleJsonp(req, res, data) {
 
 function root(req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
-  res.write('<h1>Hello, World!</h1>');
+  res.write(`<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="unsafe-url">
+    <title>Node without NPM</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+  </head>
+  <body>
+    <main>
+      <h1>Welcome!</h1>
+      <hr>
+      <p>This is a simple NodeJS server built without NPM or packages of any sort.</p>
+      <p>Your <code>User-Agent</code> header is <strong>${escape(
+        req.headers["user-agent"]
+      )}</strong>.</p>
+      <p>Your IP address is <strong>${
+        req.connection.remoteAddress
+      }</strong>.</p>
+      <p>The current time (on this server) is <strong>${new Date().toISOString()}</strong>.</p>
+    </main>
+    <footer>
+      <p>
+        <a href="https://github.com/fileformat/node-without-npm/">source</a>
+        | <a href="https://andrew.marcuse.info/contact.html">contact</a>
+      </p>
+    </footer>
+  </body>
+</html>`);
   res.end();
 }
 

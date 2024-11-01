@@ -18,4 +18,4 @@ fi
 export $(grep "^[^#]" "${ENVFILE}")
 echo "INFO: starting with ${ENVFILE}"
 
-node server.mjs
+node --watch server.mjs
