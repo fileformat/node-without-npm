@@ -23,5 +23,4 @@ docker run \
     --name "${APP_NAME}" \
     --publish ${PORT}:${PORT} \
     --rm \
-    "${APP_NAME}" \
-    | npx pino-pretty
+    "${APP_NAME}"
