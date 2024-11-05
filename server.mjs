@@ -23,7 +23,12 @@ function handleJsonp(req, res, data) {
     res.write(`${callback}(${JSON.stringify(data)})`);
     res.end();
   } else {
-    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.writeHead(200, {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, GET",
+      "Access-Control-Max-Age": "604800",
+      "Content-Type": "application/json",
+    });
     res.write(JSON.stringify(data));
     res.end();
   }
